@@ -6,4 +6,7 @@
 // You can pass additional config via defineConfig({ vite: { ... } }) if needed.
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
-export default defineConfig();
+export default defineConfig({
+  // TanStack Start needs Nitro for SSR on Vercel (default skips nitro outside Lovable sandbox).
+  nitro: { preset: "vercel" },
+});
